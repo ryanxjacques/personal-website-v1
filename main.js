@@ -3,7 +3,7 @@ import './style.css'
 import * as THREE from 'three';
 
 // A scene is a container that holds all objects, cameras, and lights 
-const scene = new THREE.scene();
+const scene = new THREE.Scene();
 
 // Camera is the view of the scene. 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
