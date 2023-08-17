@@ -21,11 +21,16 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // Place the camera along the Z axis
 camera.position.setZ(30);
 
-// Create the function for the tube to follow (default)
-const path = new THREE.Curve()
+
+// Create a quadratic curve for the tubes to follow 
+const curve = new THREE.QuadraticBezierCurve(
+	new THREE.Vector2( -10, 0 ),
+	new THREE.Vector2( 20, 15 ),
+	new THREE.Vector2( 10, 0 )
+);
 
 // Create tubes for background
-const geometry = new THREE.TubeGeometry(path, 20, 2, 8, true);
+const geometry = new THREE.TubeGeometry(curve, 20, 2, 8, true);
 // Wrap the tube in a basic mesh
 const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
 // Combine the material and geometry to make the tube 
