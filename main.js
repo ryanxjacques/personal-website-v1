@@ -25,7 +25,7 @@ camera.position.setZ(30);
 const path = new THREE.Curve()
 
 // Create tubes for background
-const geometry = new THREE.TubeGeometry(oath, 20, 2, 8, true);
+const geometry = new THREE.TubeGeometry(path, 20, 2, 8, true);
 // Wrap the tube in a basic mesh
 const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
 // Combine the material and geometry to make the tube 
