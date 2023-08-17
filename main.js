@@ -21,5 +21,19 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // Place the camera along the Z axis
 camera.position.setZ(30);
 
-// Render (draw) the screen and camera
-renderer.render(scene, camera);
+// Create tubes for background
+const geometry = new THREE.TubeGeometry(path, 20, 2, 8, true);
+// Wrap the tube in a basic mesh
+const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
+// Combine the material and geometry to make the tube 
+const tube = new THREE.Mesh(geometry, material);
+scene.add(tube)
+
+// Recursive function to render in objects
+function animate(){
+    requestAnimationFrame(animate); 
+    // Render (draw) the screen and camera
+    renderer.render(scene, camera);
+}
+
+animate()
