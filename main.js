@@ -1,3 +1,3 @@
 import './style.css'
 
-import 
+import * as THREE from 'three';
