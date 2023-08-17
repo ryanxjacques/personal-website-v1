@@ -22,15 +22,8 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(30);
 
 
-// Create a quadratic curve for the tubes to follow 
-const curve = new THREE.QuadraticBezierCurve(
-	new THREE.Vector2( -10, 0 ),
-	new THREE.Vector2( 20, 15 ),
-	new THREE.Vector2( 10, 0 )
-);
-
 // Create tubes for background
-const geometry = new THREE.TubeGeometry(curve, 20, 2, 8, true);
+const geometry = new THREE.TubeGeometry(tubularSegments = 20,  radius = 2, radialSegments = 8, closed = true);
 // Wrap the tube in a basic mesh
 const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
 // Combine the material and geometry to make the tube 
