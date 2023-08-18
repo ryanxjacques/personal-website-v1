@@ -45,7 +45,7 @@ const curve = new CustomSinCurve(10);
 // Create tubes for background
 const geometry = new THREE.TubeGeometry(curve ,20, 2, 8, true);
 // Wrap the tube in a basic mesh
-const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
+const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: false});
 // Combine the material and geometry to make the tube 
 const tube = new THREE.Mesh(geometry, material);
 scene.add(tube)
