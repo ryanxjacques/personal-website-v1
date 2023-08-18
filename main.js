@@ -52,7 +52,12 @@ scene.add(tube)
 
 // Recursive function to render in objects
 function animate(){
-    requestAnimationFrame(animate); 
+    requestAnimationFrame(animate);
+
+    tube.rotation.x += 0.01;
+    tube.rotation.y += 0.005;
+    tube.rotation.z += 0.01;
+    
     // Render (draw) the screen and camera
     renderer.render(scene, camera);
 }
