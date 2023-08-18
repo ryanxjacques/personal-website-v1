@@ -43,7 +43,7 @@ class CustomSinCurve extends THREE.Curve {
 const curve = new CustomSinCurve(10);
 
 // Create tubes for background
-const geometry = new THREE.TubeGeometry(curve ,20, 2, 8, false);
+const geometry = new THREE.TubeGeometry(curve ,40, 2, 25, false);
 // Wrap the tube in a basic mesh
 const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: false});
 // Combine the material and geometry to make the tube 
