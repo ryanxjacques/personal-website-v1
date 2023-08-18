@@ -21,9 +21,29 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // Place the camera along the Z axis
 camera.position.setZ(30);
 
+// Createa custom sin curve for the tube to follow, extending the THREE.Curve base class
+class CustomSinCurve extends THREE.Curve {
+
+    constructor (scale  = 1) {
+        super();
+        this.scale = scale;
+    }
+
+    getPoint(t, optionalTarget = new THREE.Vector3()) {
+        // Determines the movement along the x-axis
+        const tx = t * 3 - 1.5;
+        // Creates the sinusoidal variance of the tube
+        const ty = Math.sin(2 * Math.PI * t);
+        // No 3D movement
+        const tz = 0; 
+        return optionalTarget.set(tx, ty, tz).multiplyScalar(this.scale);
+    }
+}
+// Initalize custom sin curve object
+const curve = new CustomSinCurve(10);
 
 // Create tubes for background
-const geometry = new THREE.TubeGeometry(tubularSegments = 20,  radius = 2, radialSegments = 8, closed = true);
+const geometry = new THREE.TubeGeometry(curve ,20, 2, 8, true);
 // Wrap the tube in a basic mesh
 const material = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
 // Combine the material and geometry to make the tube 
