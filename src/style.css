@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgb(29, 29, 29);
     /* Creds https://stackoverflow.com/users/2765346/hristo-eftimov */
@@ -32,21 +40,29 @@ section {
 
 .navigation-bar {
     display: grid;
+    grid-template-columns: 80% 20%;
+    column-gap: 1;
     position: sticky;
     width: 100%;
     height: 10vh;
 }
 
-.navigation-right{
-    display: inherit;
+.navigation-right {
     float: right;
     height: 100%;
-    width: 33%;
+    width: 20%;
+    display: flex; /* Use flex display to align its children */
+    flex-wrap: wrap;
+    padding: 1%;
+    align-content: center;
+    justify-content: flex-end; /* Align its children to the right within the flex container */
+    align-items: center; /* Vertically center its children */
+    
 }
 
-.navigation-right > a > img {
-    height: 80%;
-    width: 80%;
-    transform: translate(-50%, -50%);
+.navigation-right .navigation-bar-right-icon {
+    width: 100%; /* Set the width to 100% */
+    height: auto;
+    
 }
 
