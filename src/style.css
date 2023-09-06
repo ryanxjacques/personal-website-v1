@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+body {
+    background-color: rgb(29, 29, 29);
+    /* Creds https://stackoverflow.com/users/2765346/hristo-eftimov */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    overflow: -moz-scrollbars-none; /* Old Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+section {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    margin: auto;
+    padding-left: 10vh;
+
+}
+
+.navigation-bar {
+    display: grid;
+    position: sticky;
+    width: 100%;
+    height: 10vh;
+}
+
+.navigation-right{
+    display: inherit;
+    float: right;
+    height: 100%;
+    width: 33%;
+}
+
+.navigation-right > a > img {
+    height: 80%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+}
+

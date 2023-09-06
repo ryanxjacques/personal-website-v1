@@ -21,5 +21,16 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 // Place the camera along the Z axis
 camera.position.setZ(30);
 
-// Render (draw) the screen and camera
-renderer.render(scene, camera);
+
+const clock = new THREE.Clock()
+
+const tick = () => {
+
+    const elapsedTime = clock.getElapsedTime()
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+
+}
+
+tick()
