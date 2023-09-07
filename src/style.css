@@ -15,14 +15,17 @@
 body {
     background-color: var(--off-white);
     /* Creds https://stackoverflow.com/users/2765346/hristo-eftimov */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-    overflow: -moz-scrollbars-none; /* Old Firefox */
+    position: relative;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: auto;
+    height: 100%;
 }
 
-body::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
-}
+body::-webkit-scrollbar{
+    display: none;
+  }
+
 canvas {
     position: fixed;
     top: 0;
@@ -42,16 +45,27 @@ section {
 
 }
 
+/**
+ * Navigation bar
+*/
+
 .navigation-bar {
-    display: grid;
-    grid-template-columns: 15% 70% 15%;
+    z-index: 1;
     position: sticky;
+    top: 0px;
+    display: grid;
+    grid-template-columns: 10% 75% 15%;
     width: 100%;
     height: 7vh;
     min-height: 50px;
 }
 
-.navigation-right {
+.navigation-header {
+    z-index: -1;
+}
+
+.navigation-right, .navigation-left {
+    z-index: 2;
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Create three equal columns for the icons */
     place-items: center;
@@ -62,16 +76,36 @@ section {
     padding: 0 0.5em;
 }
 
+.navigation-left {
+    grid-template-columns: repeat(2, 1fr); /* Create three equal columns for the icons */
+
+}
+
 /* Right navigation bar icon containers */
-.navigation-bar-right-icon {
+.navigation-bar-icon {
     width: 50%;
     height: 50%;
     min-width: 30px;
   }
 
+
 /* Right navigation bar icon images */
-.navigation-bar-right-icon img {
+.navigation-bar-icon img {
+    z-index: 2;
     height: 100%;
     width: 100%;
     object-fit: contain;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
 }
+
+/* Remove tap highlight on linked icons */
+a:active {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
