@@ -4,53 +4,38 @@
 
 const menu = document.getElementById('menu-icon');
 
+const closeMenu = document.getElementById('close-menu-icon');
+
 // One liner function:
 // Creds: https://stackoverflow.com/users/1602301/chickens
 const addCSS = (css) => document.head.appendChild(document.createElement("style")).innerHTML = css;
 
-// Usage: 
-// addCSS("body{ background:red; }")
 
 const hideMenuCSS = `
     #menu-icon {
         display: none;
     }
-`
-
-
-const dropdownIconsCSS = `
-    #github-icon, #linkedin-icon, #email-icon, #dark-light-mode-icon {
-        display: block;
-    }
 `;
 
+const dropdownIcons = ["github-icon", "linkedin-icon", "email-icon", "dark-light-mode-small-media-icon", "close-menu-icon"]
 
 menu.addEventListener('click', (e) => {
 
-    console.log('click!');
-
-
     // Hide the menu item
-    addCSS(hideMenuCSS)
-
-    const rightNavigation = document.getElementById('navigation-right')
-
-    //Append the light mode and dark mode icons to the menu container (.navigation-right)
-    rightNavigation.appendChild(document.getElementById('dark-light-mode-icon'));
-
-    // Determine the light mode and day mode!
-
-    // Append the fragment to the menu container
-    document.getElementsByClassName('')
+    menu.style.display = "none";
 
     // Drop down the github, linkedin, and mail icons in the same place
+    for (const icon of dropdownIcons) {
+        document.getElementById(icon).style.display = "block";
+    }
+    // Contain them in a ghost white background??
+});
 
-    // Contain them in a ghost white background
-
-
-
-    addCSS(dropdownIconsCSS);
-
-
-
+closeMenu.addEventListener('click', (e) => {
+    // Remove the github, linkedin, and mail icons
+        for (const icon of dropdownIcons) {
+            document.getElementById(icon).style.display = "none";
+        }
+    // Show the menu item
+    menu.style.display = "block";
 });
