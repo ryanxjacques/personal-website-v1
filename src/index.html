@@ -6,16 +6,33 @@
     <title>Ryan's Website</title>
   </head>
   <body>
-    <div class="navigation-bar" style="padding: 0px 10px;">
-      <div class="navigation-left">
-        <a class="navigation-bar-icon" href="https://github.com/ryanxjacques" target="_blank"><img src="homeIcon.png" alt="Home Icon" draggable="false"></a>
-        <a class="navigation-bar-icon" href="https://github.com/ryanxjacques" target="_blank"><img src="lightModeIcon.png" alt="Light Mode Icon" draggable="false"></a>
+    <div id="navigation-bar" style="padding: 0px 10px;">
+      <div id="navigation-left">
+        <a class="navigation-bar-icon" href="https://github.com/ryanxjacques" target="_blank">
+          <img src="homeIcon.png" alt="Home Icon" draggable="false">
+        </a>
+        <!-- Transition between light and dark mode! -->
+        <a class="navigation-bar-icon" id="dark-light-mode-icon" data-mode="light" href="https://github.com/ryanxjacques" target="_blank">
+          <img src="lightModeIcon.png" alt="Light Mode Icon" draggable="false">
+        </a>
       </div>
-      <div class="navigation-header"></div>
-      <div class="navigation-right">
-        <a class="navigation-bar-icon" href="https://github.com/ryanxjacques" target="_blank"><img src="githubIcon.png" alt="Github Icon" draggable="false"></a>
-        <a class="navigation-bar-icon" href="https://linkedin.com/in/ryanxjacques" target="_blank"><img src="linkedinIcon.png" alt="Linkedin Icon" draggable="false"></a>
-        <a class="navigation-bar-icon" href="https://email.com" target="_blank"><img src="mailIcon.png" alt="Email Icon" draggable="false"></a>
+      <div id="navigation-header"></div>
+      <div id="navigation-right">
+        <a class="navigation-bar-icon" id="github-icon" href="https://github.com/ryanxjacques" target="_blank">
+          <img src="githubIcon.png" alt="Github Icon" draggable="false">
+        </a>
+        <a class="navigation-bar-icon" id="linkedin-icon" href="https://linkedin.com/in/ryanxjacques" target="_blank">
+          <img src="linkedinIcon.png" alt="Linkedin Icon" draggable="false">
+        </a>
+        <a class="navigation-bar-icon" id="email-icon" href="https://email.com" target="_blank">
+          <img src="mailIcon.png" alt="Email Icon" draggable="false">
+        </a>
+        <div class="navigation-bar-icon" id="menu-icon">
+          <img src="menuIcon.png" alt="Menu Icon" draggable="false">
+        </div>
+        <div class="navigation-bar-icon" id="close-menu-icon">
+          <img src="closeMenuIcon.png" alt="Close Menu Icon" draggable="false">
+        </div>
       </div>
     </div>
     <section class="section">
@@ -33,6 +50,7 @@
 
     <canvas id="bg"></canvas>
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/menu.js"></script>
   </body>
 </html>
 

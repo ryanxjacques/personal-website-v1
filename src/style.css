@@ -2,7 +2,8 @@
 
 :root {
     --dark-grey: #1d1d1d;
-    --off-white: #F0EAD6;
+    --eggshell: #F0EAD6;
+    --floral-white: #F9F7F0;
 }
 
 /* CSS Reset */
@@ -12,8 +13,9 @@
     box-sizing: border-box;
 }
 
+
 body {
-    background-color: var(--off-white);
+    background-color: var(--eggshell);
     /* Creds https://stackoverflow.com/users/2765346/hristo-eftimov */
     position: relative;
     -ms-overflow-style: none;
@@ -46,10 +48,9 @@ section {
 }
 
 /**
- * Navigation bar
+ * ======================================= Navigation bar ======================================= 
 */
-
-.navigation-bar {
+#navigation-bar {
     z-index: 1;
     position: sticky;
     top: 0px;
@@ -60,32 +61,23 @@ section {
     min-height: 50px;
 }
 
-.navigation-header {
-    z-index: -1;
-}
 
-.navigation-right, .navigation-left {
+#navigation-right, #navigation-left {
+    width: 100%;
     z-index: 2;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create three equal columns for the icons */
-    place-items: center;
-    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     min-height: inherit; /* Use min-height to inherit the height from navigation-bar */
     margin: 0 auto;
-    padding: 0 0.5em;
-}
-
-.navigation-left {
-    grid-template-columns: repeat(2, 1fr); /* Create three equal columns for the icons */
-
 }
 
 /* Right navigation bar icon containers */
 .navigation-bar-icon {
     width: 50%;
     height: 50%;
-    min-width: 30px;
+    min-width: 15px;
   }
 
 
@@ -103,9 +95,39 @@ section {
 
 }
 
+#menu-icon, #close-menu-icon {
+    display: none;
+}
+
+
 /* Remove tap highlight on linked icons */
 a:active {
     outline: none;
     -webkit-tap-highlight-color: transparent;
 }
 
+
+/* Tablet and Phone */
+@media screen and (max-width: 850px) {
+    #github-icon, #linkedin-icon, #email-icon, #dark-light-mode-icon {
+        display: none;
+    }
+
+    /* Menu icon */
+    #menu-icon {
+        cursor: pointer;
+        display: block;
+        float: right;
+    }
+
+    .navigation-left {
+        justify-content: left;
+    }
+    .navigation-right {
+        justify-content: right;
+    }
+  }
+
+/**
+ * ======================================= Navigation bar ======================================= 
+*/
