@@ -59,6 +59,7 @@ section {
     width: 100%;
     height: 7vh;
     min-height: 50px;
+    padding: 0 0;
 }
 
 
@@ -107,6 +108,13 @@ a:active {
 }
 
 
+/* Slight padding to prevent icon cramping */
+@media screen and (max-width: 950px) and (min-width: 750px) {
+    #navigation-bar {
+        padding: 0 1%;
+    }
+}
+
 /* Tablet and Phone */
 @media screen and (max-width: 750px) {
     #github-icon, #linkedin-icon, #email-icon, #dark-light-mode-large-media-icon {
@@ -132,7 +140,7 @@ a:active {
     }
 
     #navigation-bar {
-        grid-template-columns: 10% 80% 10%;
+        grid-template-columns: 8% 84% 8%;
     }
   }
 
