@@ -71,7 +71,20 @@ section {
     justify-content: center;
     height: 100%;
     min-height: inherit; /* Use min-height to inherit the height from navigation-bar */
+
+    background-color: var(--floral-white);
 }
+
+#navigation-right {
+    border-radius: 0% 0% 0% 15px;
+}
+
+#navigation-left {
+    border-radius: 0% 0% 15px 0%;
+}
+
+
+
 
 /* Right navigation bar icon containers */
 .navigation-bar-icon {
@@ -79,6 +92,7 @@ section {
     height: 50%;
     min-width: 20px;
   }
+
 
 
 /* Right navigation bar icon images */
@@ -92,10 +106,12 @@ section {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    opacity: 1;
 
 }
 
 
+/* Default (landscape) mode visibility */
 #menu-icon, #close-menu-icon, #dark-light-mode-small-media-icon {
     display: none;
 }
@@ -107,41 +123,41 @@ a:active {
     -webkit-tap-highlight-color: transparent;
 }
 
-
-/* Slight padding to prevent icon cramping */
-@media screen and (max-width: 950px) and (min-width: 750px) {
-    #navigation-bar {
-        padding: 0 1%;
-    }
-}
-
 /* Tablet and Phone */
 @media screen and (max-width: 750px) {
     #github-icon, #linkedin-icon, #email-icon, #dark-light-mode-large-media-icon {
         display: none;
+
     }
 
     /* Menu icon */
     #menu-icon {      
         display: block;
-    }
 
-    #navigation-right, #navigation-left {
-        flex-direction: column;
-        align-items: space-between;
-        justify-content: start;
-        margin-top: 10px;
-        gap: 10px;
-    }
-
-    /*Override for alignment of icons*/
-    #navigation-left {
-        margin-top: 9px;
     }
 
     #navigation-bar {
-        grid-template-columns: 8% 84% 8%;
+        grid-template-columns: 14% 72% 14%; 
     }
+
+    #navigation-right {
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+        background-color: transparent;
+        justify-content: start;
+    }
+
+    #navigation-left {
+        background-color: transparent;
+    }
+
+    /* Add a psuedo element to force proper alignment*/
+    #navigation-right::before {
+        content: "";
+    }
+
+
   }
 
 /**
