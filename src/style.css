@@ -24,6 +24,7 @@ body {
     height: 100%;
 }
 
+
 body::-webkit-scrollbar{
     display: none;
   }
@@ -48,7 +49,30 @@ section {
 }
 
 /**
- * ======================================= Navigation bar ======================================= 
+ * ======================================= Pointer =======================================
+*/
+body:hover > #pointer {
+    opacity: 1;
+}
+
+#pointer{
+    background-color: var(--dark-grey);
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    pointer-events: none; /* Allow mouse events to pass through */
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+
+/**
+ * ======================================= Navigation bar =======================================
 */
 #navigation-bar {
     z-index: 1;
@@ -150,11 +174,13 @@ a:active {
 
     #navigation-left {
         background-color: transparent;
+        margin-top: 1px;
     }
 
     /* Add a psuedo element to force proper alignment*/
     #navigation-right::before {
         content: "";
+        height: -100px;
     }
 
 

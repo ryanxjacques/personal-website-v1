@@ -102,7 +102,8 @@ const closeMenuTransition = () => {
 const toggleMenu = () => {
 
     // Menu is closed 
-    if (menuIcon.dataset.status === "closed") {    
+    if (menuIcon.dataset.status === "closed") {
+          
         //Animate icon dropdown
         openMenuTransition();   
         // Swap status
